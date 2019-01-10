@@ -19,7 +19,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<link rel="icon" type="image/png" href="../img/logo.png">
 </head>
 <body class="fondo">
-<header class="animated fadeInDown">
+<header class="animated fadeIn">
 	<div class="header">
 
 	<div class="aside_header"></div>
@@ -53,16 +53,18 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<input type="checkbox" id="btn_menu">
 	<div class="menu">
 		<ul>
-			<li><a href="../index.php">Inicio</a></li>
+			<li><a href="../index.php" class="activo">Inicio</a></li>
+			<?php if($_SESSION['role_user'] == 'admin'){?>
+			<li><a href="./categorias.php">Categorias</a></li>
+			<li><a href="./participantes.php">Participantes</a></li>
+			<?php }else{ ?>
 			<li><a href="../index.php">Novedades</a></li>
 			<li><a href="../index.php">Categoria</a></li>
-			<li><a href="./inscripcion.php">Inscribe a tu favorito</a></li>
 			<li><a href="../index.php">Galeria</a></li>
 			<li><a href="../index.php">Comite Organizador</a></li>
 			<li><a href="../index.php">Contacto</a></li>
-			<?php if($_SESSION['role_user'] == 'admin'){?>
-			<li><a href="../index.php">Selecion</a></li>
 			<?php } ?>
+			<li><a href="./inscripcion.php">Inscribe a tu favorito</a></li>
 			<li><a href="../modells/salir.php" style="color: red;">Salir</a></li>
 		</ul>
 	</div>

@@ -54,7 +54,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 			<li><a href="../index.php">Inicio</a></li>
 			<?php if($_SESSION['role_user'] == 'admin'){?>
 			<li><a href="./categorias.php">Categorias</a></li>
-			<li><a href="./participantes.php">Participantes</a></li>
+			<li><a href="./participantes.php" class="activo">Participantes</a></li>
 			<?php }else{ ?>
 			<li><a href="../index.php">Novedades</a></li>
 			<li><a href="../index.php">Categoria</a></li>
@@ -62,7 +62,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 			<li><a href="../index.php">Comite Organizador</a></li>
 			<li><a href="../index.php">Contacto</a></li>
 			<?php } ?>
-			<li><a href="./inscripcion.php" class="activo">Inscribe a tu favorito</a></li>
+			<li><a href="./inscripcion.php">Inscribe a tu favorito</a></li>
 			<li><a href="../modells/salir.php" style="color: red;">Salir</a></li>
 		</ul>
 	</div>
@@ -74,6 +74,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	 
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
+		<h1>Agregar participante</h1>
 		<form action="modells/login.php" method="POST" enctype="multipart/form-data">
 
 		  <label class="my-1 mr-2" for="categorias">Categorias</label>

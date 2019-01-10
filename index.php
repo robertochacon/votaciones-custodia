@@ -19,7 +19,7 @@ if (!isset($_SESSION['nombre_user'])) { ?>
 	<link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
-	<header class="animated fadeInDown">
+	<header class="animated fadeIn">
 	<div class="header">
 
 	<div class="aside_header"></div>

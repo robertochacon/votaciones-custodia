@@ -42,7 +42,7 @@ CREATE TABLE `megustas` (
   `id_voto` int(11) NOT NULL,
   `codigo_usuario` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `megustas` */
 
@@ -85,15 +85,16 @@ CREATE TABLE `votacion` (
   `telefono` varchar(15) DEFAULT NULL,
   `megustas` int(11) NOT NULL,
   `status` enum('bloqueado','desbloqueado') DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `votacion` */
 
-insert  into `votacion`(`id`,`categoria`,`nombre`,`año_evangelizacion`,`biografia_logros`,`discografia`,`lugar_servicio_pastoral`,`imagen`,`correo`,`telefono`,`megustas`,`status`) values 
-(1,NULL,'testing',NULL,NULL,NULL,NULL,'uno.jpg',NULL,NULL,0,'desbloqueado'),
-(2,NULL,'testing 2',NULL,NULL,NULL,NULL,'dos.jpg',NULL,NULL,0,'bloqueado'),
-(3,NULL,'testing 3',NULL,NULL,NULL,NULL,'tres.jpg',NULL,NULL,0,'desbloqueado');
+insert  into `votacion`(`id`,`categoria`,`nombre`,`año_evangelizacion`,`biografia_logros`,`discografia`,`lugar_servicio_pastoral`,`imagen`,`correo`,`telefono`,`megustas`,`status`,`fecha`) values 
+(1,NULL,'testing',NULL,NULL,NULL,NULL,'uno.jpg',NULL,NULL,0,'desbloqueado',NULL),
+(2,NULL,'testing 2',NULL,NULL,NULL,NULL,'dos.jpg',NULL,NULL,0,'bloqueado',NULL),
+(3,NULL,'testing 3',NULL,NULL,NULL,NULL,'tres.jpg',NULL,NULL,0,'desbloqueado',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -74,15 +74,15 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	 
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
-		<form action="modells/login.php" method="POST" enctype="multipart/form-data">
+		<form action="modells/inscripcion.php" method="POST" enctype="multipart/form-data">
 
 		  <label class="my-1 mr-2" for="categorias">Categorias</label>
 		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
-		    <option selected>Choose...</option>
+		    <option selected>Selecionar</option>
 		    <?php 
-		    $categorias = Conexion::consultar('SELECT nombre FROM categorias');
+		    $categorias = Conexion::consultar('SELECT id,nombre FROM categorias');
 		    foreach ($categorias as $key => $value) { ?>
-		   		<option value="<?= $value['id']?>"><?= $value['nombre']; ?></option>
+		   		<option value="<?= $value['id']; ?>"><?= $value['nombre']; ?></option>
 		    <?php } ?>
 		  </select>
 
@@ -116,7 +116,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 		  </div>
 		  <div class="form-group">
 		    <label for="telefono">Telefono</label>
-		    <input type="number" name="email" class="form-control" id="telefono" placeholder="Introdusca un telefono" required="">
+		    <input type="number" name="telefono" class="form-control" id="telefono" placeholder="Introdusca un telefono" required="">
 		  </div>
 
 		  <button type="submit" class="btn btn-success mb-3">Agregar</button>

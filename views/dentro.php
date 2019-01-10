@@ -84,7 +84,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 <?php
 $codigo_usuario = @$_SESSION['id_user'];
 $con = Conexion::getConexion();
-$votacion = $con->query("SELECT * FROM votacion");
+$votacion = $con->query("SELECT * FROM votacion WHERE status = 'desbloqueado'");
 echo "<center><br><br></center>";
 
 ?>
@@ -127,7 +127,7 @@ while ($ver = mysqli_fetch_array($votacion)) {
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Informacion.<i class="material-icons right">close</i></span>
       <span class="card-title grey-text text-darken-4"><?php echo $ver['nombre'];?></span>
-      <p><?php echo $ver['informacion'];?></p>
+      <p><?php echo $ver['biografia_logros'];?></p>
     </div>
   </div>
 </div>

@@ -77,11 +77,13 @@ if (isset($_SESSION['nombre_user'])) { ?>
 		<form action="modells/login.php" method="POST" enctype="multipart/form-data">
 
 		  <label class="my-1 mr-2" for="categorias">Categorias</label>
-		  <select class="custom-select my-1 mr-sm-2" id="categorias">
+		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
 		    <option selected>Choose...</option>
-		    <option value="1">One</option>
-		    <option value="2">Two</option>
-		    <option value="3">Three</option>
+		    <?php 
+		    $categorias = Conexion::consultar('SELECT nombre FROM categorias');
+		    foreach ($categorias as $key => $value) { ?>
+		   		<option value="<?= $value['id']?>"><?= $value['nombre']; ?></option>
+		    <?php } ?>
 		  </select>
 
 		  <div class="form-group">

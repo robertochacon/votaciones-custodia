@@ -75,7 +75,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
 		<h1>Agregar categoria</h1>
-		<form action="modells/login.php" method="POST" enctype="multipart/form-data">
+		<form action="../modells/categorias.php" method="POST">
 
 		  <div class="form-group">
 		    <label for="Nombre">Nombre</label>

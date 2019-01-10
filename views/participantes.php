@@ -74,52 +74,8 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	 
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
-		<h1>Agregar participante</h1>
-		<form action="modells/login.php" method="POST" enctype="multipart/form-data">
-
-		  <label class="my-1 mr-2" for="categorias">Categorias</label>
-		  <select class="custom-select my-1 mr-sm-2" id="categorias">
-		    <option selected>Choose...</option>
-		    <option value="1">One</option>
-		    <option value="2">Two</option>
-		    <option value="3">Three</option>
-		  </select>
-
-		  <div class="form-group">
-		    <label for="Nombre">Nombre</label>
-		    <input type="text" name="nombre" class="form-control" id="Nombre" placeholder="Introdusca un nombre" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="año">Año de evangelizacion</label>
-		    <input type="number" name="año" class="form-control" id="año" placeholder="Introdusca un año" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="biografia">Biografia y logros</label>
-		    <textarea class="form-control" id="biografia" name="biografia" placeholder="Biografia y logros" rows="3"></textarea>
-		  </div>
-		  <div class="form-group">
-		    <label for="discografia">Discografia</label>
-		    <input type="text" name="discografia" class="form-control" id="discografia" placeholder="Introdusca un discografia" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="servicio_pastoral">Lugar de servicio pastoral</label>
-		    <input type="number" name="servicio_pastoral" class="form-control" id="servicio_pastoral" placeholder="Introdusca un lugar de servicio pastoral" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="imagen">Imagen</label>
-		    <input type="file" name="imagen" class="form-control" id="imagen" placeholder="imagen" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="email">Email</label>
-		    <input type="email" name="email" class="form-control" id="email" placeholder="Introdusca un email" required="">
-		  </div>
-		  <div class="form-group">
-		    <label for="telefono">Telefono</label>
-		    <input type="number" name="email" class="form-control" id="telefono" placeholder="Introdusca un telefono" required="">
-		  </div>
-
-		  <button type="submit" class="btn btn-success mb-3">Agregar</button>
-		</form>
+		<center><h1>Selecionar los participante</h1></center>
+		
 	</div>
 </div>
  

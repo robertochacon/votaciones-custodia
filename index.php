@@ -79,7 +79,7 @@ if (!isset($_SESSION['nombre_user'])) { ?>
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
 <div class="container">
- <form action="modells/login.php" method="POST">
+ <form action="modells/login.php" method="POST" class="pt-3">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introdusca su email">
@@ -96,7 +96,7 @@ if (!isset($_SESSION['nombre_user'])) { ?>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
   	
   	<div class="container">
- <form action="modells/registro.php" method="POST">
+ <form action="modells/registro.php" method="POST" class="pt-3">
    <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Introdusca su nombre">

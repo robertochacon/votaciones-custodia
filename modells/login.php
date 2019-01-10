@@ -16,6 +16,7 @@ if ($count == 1) {
 	$_SESSION['id_user'] = $datos['id_user'];
 	$_SESSION['email'] = $datos['email'];
 	$_SESSION['nombre_user'] = $datos['nombre'];
+	$_SESSION['role_user'] = $datos['role'];
 
 	header("Location: ../views/dentro.php");
 	// echo "1";

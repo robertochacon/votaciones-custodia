@@ -60,6 +60,9 @@ if (isset($_SESSION['nombre_user'])) { ?>
 			<li><a href="../index.php">Galeria</a></li>
 			<li><a href="../index.php">Comite Organizador</a></li>
 			<li><a href="../index.php">Contacto</a></li>
+			<?php if($_SESSION['role_user'] == 'admin'){?>
+			<li><a href="../index.php">Selecion</a></li>
+			<?php } ?>
 			<li><a href="../modells/salir.php" style="color: red;">Salir</a></li>
 		</ul>
 	</div>

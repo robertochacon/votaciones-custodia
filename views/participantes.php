@@ -12,10 +12,10 @@ if (isset($_SESSION['nombre_user'])) { ?>
     <meta name="author" content="Roberto Chacon A.">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 	<title>votos</title>
-	<script src="js/jquery.js"></script>
+	<script src="../js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/material_icons/stylesheet.css">
 	<link rel="icon" type="image/png" href="../img/logo.png">
 </head>
@@ -35,9 +35,11 @@ if (isset($_SESSION['nombre_user'])) { ?>
 					<img src="../img/logo.png" class="logo_responsive" width="100"><br>
 				</div>
 				<div class="cajas">
-					
 					<center><h3>Votacion Mi Voz Para Cristo 2018</h3></center>
-				</div>		
+				</div>
+				<div class="cajas">
+					<b><span id="contador"></span></b>
+				</div>
 			</div>	
 			</div>
 		<div class="redes">
@@ -47,7 +49,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<div class="aside_header"></div>
 	</div>
 
-	<label for="btn_menu" class="btn_menu"><img src="img/menu.png"></label>
+	<label for="btn_menu" class="btn_menu"><img src="../img/menu.png"></label>
 	<input type="checkbox" id="btn_menu">
 	<div class="menu">
 		<ul>
@@ -69,15 +71,80 @@ if (isset($_SESSION['nombre_user'])) { ?>
 
 </header>
 
+<center>
 <div class="container">
-	
-	 
-<div class="row justify-content-center">
-	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
-		<center><h1>Selecionar los participante</h1></center>
-		
-	</div>
+	<!-- <div class="contenedor"> -->
+
+<?php
+$codigo_usuario = @$_SESSION['id_user'];
+$con = Conexion::getConexion();
+$votacion = $con->query("SELECT * FROM votacion");
+echo "<center><br><br></center>";
+
+?>
+
+
+<div class="row">
+
+<?php
+
+while ($ver = mysqli_fetch_array($votacion)) { 
+
+	$id_voto = $ver['id'];
+	$sql_megustas = $con->query("SELECT * FROM megustas WHERE id_voto = '".$ver['id']."' AND codigo_usuario = '".$codigo_usuario."'");
+	$verificar_megusta = mysqli_num_rows($sql_megustas); ?>
+
+
+<div class="col s12 s6 m6 l4">
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="../img/selecionados/<?php echo $ver['imagen'];?>">
+    </div>
+    <div class="card-content">
+    	<span class="card-title activator grey-text text-darken-4"><?php echo $ver['nombre'];?><i class="material-icons right">more_vert</i></span>      <!--boton-->
+	<div class="row">
+      	<div class="col-md-8"></div>
+      	<div class="col-md-4">
+      		  <!-- Switch -->
+			  <div class="switch">
+			    <label>
+			      Off
+			      <input type="checkbox" onclick="cambiar_status('<?php echo $ver['id'];?>')" <?php if($ver['status'] == 'desbloqueado'){echo 'checked';}  ?> value="<?php echo $ver['id'];?>">
+			      <span class="lever"></span>
+			      On
+			    </label>
+			  </div>
+      	</div>
+      </div>
+
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Informacion.<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4"><?php echo $ver['nombre'];?></span>
+      <p><?php echo $ver['biografia_logros'];?></p>
+ 
+    </div>
+  </div>
 </div>
+
+
+ <?php }	  ?>
+
+			<!--ventana popup-->
+			<div class="popup_background" id="popup">
+				<div class="popup">
+				<section class="texto">
+					<h1>Gracias por tu voto</h1>
+				</section>
+
+				<section class="abajo">
+					Redirecionando	
+				</section>
+				</div>
+			</div>
+
+</div>
+</center>
  
 
 </div>
@@ -85,15 +152,15 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<?php if (isset($_GET['mensaje'])) {echo "Datos incorrectos";}else{}?>
 </a>
 
-<script>
+<!-- <script>
   $(document).ready(function(){
     $('.tabs').tabs();
   });
-</script>
-
+</script> -->
+<script src="../js/jquery.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../js/materialize.min.js"></script>
 </body>
 </html>
 

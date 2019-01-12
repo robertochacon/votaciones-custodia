@@ -49,7 +49,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<div class="aside_header"></div>
 	</div>
 
-	<label for="btn_menu" class="btn_menu"><img src="img/menu.png"></label>
+	<label for="btn_menu" class="btn_menu"><img src="../img/menu.png"></label>
 	<input type="checkbox" id="btn_menu">
 	<div class="menu">
 		<ul>

@@ -1,15 +1,9 @@
 
 $(document).ready(function(){
 
-		//guardando los temas en tiempo real con ajax
-		//$(document).on("click",".id_selecion",function(e){
-		//	e.preventDefault();
 		$(".id_selecion").click(function(){
-
-			//id del voto selecionado
 			var id = this.id;
 			console.log(id);
-			// var categoria = document.getElementById('categoria').value;
 			
 			$.ajax({
 				url: "../modells/megustas.php",
@@ -27,14 +21,33 @@ $(document).ready(function(){
                         $("#"+id).val(text);
                 }	
 			});
+		});
 
-	});
+
 });
 
 	function onpopup(){
 		setTimeout("location.href ='https://www.facebook.com/VocesTVe/'",3000);
 		document.getElementById('popup').style.top = "0%";
 	}
+
+	function cambiar_status(id){
+		console.log(id);
+		$.ajax({
+				url: "../modells/cambio_status.php",
+				method: "POST",
+				data:{id:id},
+				/*beforeSend:function(){
+						$("#"+id).val("....");
+				},*/
+                success:  function (data) {
+                	if (data) {console.log("good");}else{console.log("bad")}
+                	
+                }	
+			});
+	}
+
+
 
 	/*function offpopup(){
 		document.getElementById('popup').style.display = "none";

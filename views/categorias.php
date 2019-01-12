@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
     <meta name="author" content="Roberto Chacon A.">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 	<title>votos</title>
-	<script src="js/jquery.js"></script>
+	<script src="../js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -38,6 +38,9 @@ if (isset($_SESSION['nombre_user'])) { ?>
 					
 					<center><h3>Votacion Mi Voz Para Cristo 2018</h3></center>
 				</div>		
+				<div class="cajas">
+					<b><span id="contador"></span></b>
+				</div>
 			</div>	
 			</div>
 		<div class="redes">
@@ -47,7 +50,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<div class="aside_header"></div>
 	</div>
 
-	<label for="btn_menu" class="btn_menu"><img src="img/menu.png"></label>
+	<label for="btn_menu" class="btn_menu"><img src="../img/menu.png"></label>
 	<input type="checkbox" id="btn_menu">
 	<div class="menu">
 		<ul>
@@ -68,7 +71,12 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	</div>
 
 </header>
-
+<script type="text/javascript">
+	window.onload=function(){
+	var antes = document.getElementById('carga');
+	antes.style.display='none';}
+</script>
+<div id="carga"></div>
 <div class="container">
 	
 	 
@@ -92,12 +100,6 @@ if (isset($_SESSION['nombre_user'])) { ?>
 <a class="waves-effect waves-teal btn-flat">
 	<?php if (isset($_GET['mensaje'])) {echo "Datos incorrectos";}else{}?>
 </a>
-
-<script>
-  $(document).ready(function(){
-    $('.tabs').tabs();
-  });
-</script>
 
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>

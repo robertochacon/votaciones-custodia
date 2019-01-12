@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
     <meta name="author" content="Roberto Chacon A.">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 	<title>votos</title>
-	<script src="js/jquery.js"></script>
+	<script src="../js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -35,9 +35,11 @@ if (isset($_SESSION['nombre_user'])) { ?>
 					<img src="../img/logo.png" class="logo_responsive" width="100"><br>
 				</div>
 				<div class="cajas">
-					
 					<center><h3>Votacion Mi Voz Para Cristo 2018</h3></center>
-				</div>		
+				</div>
+				<div class="cajas">
+					<b><span id="contador"></span></b>
+				</div>
 			</div>	
 			</div>
 		<div class="redes">
@@ -47,7 +49,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<div class="aside_header"></div>
 	</div>
 
-	<label for="btn_menu" class="btn_menu"><img src="img/menu.png"></label>
+	<label for="btn_menu" class="btn_menu"><img src="../img/menu.png"></label>
 	<input type="checkbox" id="btn_menu">
 	<div class="menu">
 		<ul>
@@ -74,7 +76,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	 
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
-		<form action="modells/inscripcion.php" method="POST" enctype="multipart/form-data">
+		<form action="../modells/inscripcion.php" method="POST" enctype="multipart/form-data">
 
 		  <label class="my-1 mr-2" for="categorias">Categorias</label>
 		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
@@ -104,7 +106,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 		  </div>
 		  <div class="form-group">
 		    <label for="servicio_pastoral">Lugar de servicio pastoral</label>
-		    <input type="number" name="servicio_pastoral" class="form-control" id="servicio_pastoral" placeholder="Introdusca un lugar de servicio pastoral" required="">
+		    <input type="text" name="servicio_pastoral" class="form-control" id="servicio_pastoral" placeholder="Introdusca un lugar de servicio pastoral" required="">
 		  </div>
 		  <div class="form-group">
 		    <label for="imagen">Imagen</label>
@@ -129,12 +131,6 @@ if (isset($_SESSION['nombre_user'])) { ?>
 <a class="waves-effect waves-teal btn-flat">
 	<?php if (isset($_GET['mensaje'])) {echo "Datos incorrectos";}else{}?>
 </a>
-
-<script>
-  $(document).ready(function(){
-    $('.tabs').tabs();
-  });
-</script>
 
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>

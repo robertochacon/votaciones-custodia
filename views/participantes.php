@@ -1,7 +1,7 @@
 <?php
 include '../modells/libs/conexion.php';
 session_start();
-if (isset($_SESSION['nombre_user'])) { ?>
+if (isset($_SESSION['nombre_user']) && $_SESSION['role_user'] == 'admin') { ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -165,7 +165,7 @@ while ($ver = mysqli_fetch_array($votacion)) {
 </html>
 
 
-<?php }else{ header("Location:views/dentro.php");}
+<?php }else{ header("Location:./dentro.php");}
 // require_once('vendor/autoload.php');
 // require_once('App/Auth/Auth.php');
 // Auth::getUserAuth();

@@ -80,16 +80,6 @@ if (isset($_SESSION['nombre_user'])) { ?>
 		<!-- <form action="../modells/inscripcion.php" method="POST" enctype="multipart/form-data"> -->
 		<form id="participanteForm" method="POST" enctype="multipart/form-data">
 
-		  <label class="my-1 mr-2" for="categorias">Categorias</label>
-		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
-		    <option selected>Selecionar</option>
-		    <?php 
-		    $categorias = Conexion::consultar('SELECT id,nombre FROM categorias');
-		    foreach ($categorias as $key => $value) { ?>
-		   		<option value="<?= $value['id']; ?>"><?= $value['nombre']; ?></option>
-		    <?php } ?>
-		  </select>
-
 		  <div class="form-group">
 		    <label for="Nombre">Nombre</label>
 		    <input type="text" name="nombre" class="form-control" id="Nombre" placeholder="Introdusca un nombre" required="">
@@ -122,6 +112,16 @@ if (isset($_SESSION['nombre_user'])) { ?>
 		    <label for="telefono">Telefono</label>
 		    <input type="number" name="telefono" class="form-control" id="telefono" placeholder="Introdusca un telefono" required="">
 		  </div>
+
+		  <label class="my-1 mr-2" for="categorias">Categorias</label>
+		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
+		    <option selected>Selecionar</option>
+		    <?php 
+		    $categorias = Conexion::consultar('SELECT id,nombre FROM categorias');
+		    foreach ($categorias as $key => $value) { ?>
+		   		<option value="<?= $value['id']; ?>"><?= $value['nombre']; ?></option>
+		    <?php } ?>
+		  </select>
 
 		  <button type="submit" class="btn btn-success mb-3">Agregar</button>
 		</form>

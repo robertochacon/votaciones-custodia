@@ -16,6 +16,7 @@ if (isset($_SESSION['nombre_user']) && $_SESSION['role_user'] == 'admin') { ?>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/toastr.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/material_icons/stylesheet.css">
 	<link rel="icon" type="image/png" href="../img/logo.png">
 </head>
@@ -83,7 +84,7 @@ if (isset($_SESSION['nombre_user']) && $_SESSION['role_user'] == 'admin') { ?>
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
 		<h1>Agregar categoria</h1>
-		<form action="../modells/categorias.php" method="POST">
+		<form id="agregar_categoria_form" method="POST">
 
 		  <div class="form-group">
 		    <label for="Nombre">Nombre</label>
@@ -104,6 +105,7 @@ if (isset($_SESSION['nombre_user']) && $_SESSION['role_user'] == 'admin') { ?>
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/toastr.min.js"></script>
 </body>
 </html>
 

@@ -24,6 +24,35 @@ $(".id_selecion").click(function(){
 	});
 });
 
+
+$("#agregar_categoria_form").submit(function(event){
+	event.preventDefault();
+
+	// var datos = new FormData(this);
+
+	$.ajax({
+			url: '../modells/categorias.php',
+			type: 'POST',
+			data: $("#agregar_categoria_form").serialize(),
+			// data: datos,
+			contentType: false,
+			processData: false,
+			success:function(data){
+
+				if (data) {
+					toastr.success('Status','Guardado correctamente!',{timeOut:5000});
+					console.log('Guardado')
+				}else{
+					toastr.error('Status','No se puede guardar, intente nuevamente.',{timeOut:5000});
+					console.log('Error')
+				}
+				
+			}
+		});
+});
+
+
+
 $("#participanteForm").submit(function(event){
 	event.preventDefault();
 

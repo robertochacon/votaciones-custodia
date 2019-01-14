@@ -16,6 +16,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/toastr.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/material_icons/stylesheet.css">
 	<link rel="icon" type="image/png" href="../img/logo.png">
 </head>
@@ -76,7 +77,8 @@ if (isset($_SESSION['nombre_user'])) { ?>
 	 
 <div class="row justify-content-center">
 	<div class="col-sm-12 col-md-6 col-lg-6 mt-3 pt-3 animated fadeIn" style="background: white;">
-		<form action="../modells/inscripcion.php" method="POST" enctype="multipart/form-data">
+		<!-- <form action="../modells/inscripcion.php" method="POST" enctype="multipart/form-data"> -->
+		<form id="participanteForm" method="POST" enctype="multipart/form-data">
 
 		  <label class="my-1 mr-2" for="categorias">Categorias</label>
 		  <select class="custom-select my-1 mr-sm-2" id="categorias" name="categoria">
@@ -135,6 +137,7 @@ if (isset($_SESSION['nombre_user'])) { ?>
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/toastr.min.js"></script>
 </body>
 </html>
 

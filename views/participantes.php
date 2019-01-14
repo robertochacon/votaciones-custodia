@@ -16,6 +16,7 @@ if (isset($_SESSION['nombre_user']) && $_SESSION['role_user'] == 'admin') { ?>
 	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/toastr.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/material_icons/stylesheet.css">
 	<link rel="icon" type="image/png" href="../img/logo.png">
 </head>
@@ -161,6 +162,7 @@ while ($ver = mysqli_fetch_array($votacion)) {
 <script src="../js/script.js"></script>
 <script src="../js/cuenta_regresiva.js"></script>
 <script src="../js/materialize.min.js"></script>
+<script src="../js/toastr.min.js"></script>
 </body>
 </html>
 
